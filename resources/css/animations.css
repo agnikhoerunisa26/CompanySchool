@@ -1,0 +1,199 @@
+/* ============================================
+   SCROLL REVEAL
+   ============================================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   HERO INTRO (muncul saat halaman dibuka)
+   ============================================ */
+@keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-intro > * {
+    opacity: 0;
+    animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-intro > *:nth-child(1) { animation-delay: 0.1s; }
+.hero-intro > *:nth-child(2) { animation-delay: 0.25s; }
+.hero-intro > *:nth-child(3) { animation-delay: 0.4s; }
+.hero-intro > *:nth-child(4) { animation-delay: 0.55s; }
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar {
+    transition: box-shadow 0.3s ease;
+}
+
+.navbar.navbar-scrolled {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+.nav-link {
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+/* ============================================
+   HOVER KARTU
+   ============================================ */
+.feature-card,
+.artikel-card,
+.program-card,
+.eskul-card,
+.produk-card,
+.kontak-social-card,
+.detail-related-card,
+.galeri-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover,
+.artikel-card:hover,
+.program-card:hover,
+.eskul-card:hover,
+.produk-card:hover,
+.kontak-social-card:hover,
+.detail-related-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+}
+
+.ekskul-item {
+    transition: transform 0.3s ease;
+}
+
+.ekskul-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Zoom halus pada foto */
+.artikel-thumb img,
+.produk-thumb img,
+.eskul-thumb img,
+.program-thumb > img {
+    transition: transform 0.5s ease;
+}
+
+.artikel-card:hover .artikel-thumb img,
+.produk-card:hover .produk-thumb img,
+.eskul-card:hover .eskul-thumb img,
+.program-card:hover .program-thumb > img {
+    transform: scale(1.06);
+}
+
+/* ============================================
+   TOMBOL
+   ============================================ */
+.btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(12, 46, 100, 0.25);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.cart-btn {
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.cart-btn:hover {
+    transform: scale(1.1);
+}
+
+/* ============================================
+   TOMBOL KEMBALI KE ATAS
+   ============================================ */
+.back-to-top {
+    position: fixed;
+    right: 1.75rem;
+    bottom: 1.75rem;
+    width: 46px;
+    height: 46px;
+    border: none;
+    border-radius: 50%;
+    background: var(--navy-900);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(12, 46, 100, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s, background 0.2s ease;
+    z-index: 60;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--gold);
+    color: var(--navy-900);
+}
+
+/* ============================================
+   ADMIN: TOAST & DROPDOWN NOTIFIKASI
+   ============================================ */
+@keyframes toastIn {
+    from { opacity: 0; transform: translateX(40px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+.admin-toast {
+    animation: toastIn 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes dropdownIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.admin-notif-dropdown.show {
+    animation: dropdownIn 0.2s ease;
+}
+
+.admin-notif-dot {
+    animation: pulseDot 1.6s infinite;
+}
+
+@keyframes pulseDot {
+    0%   { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.6); }
+    70%  { box-shadow: 0 0 0 8px rgba(220, 38, 38, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+
+/* ============================================
+   AKSESIBILITAS: matikan animasi jika diminta pengguna
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .hero-intro > * {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}

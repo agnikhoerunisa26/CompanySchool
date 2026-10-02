@@ -1,0 +1,409 @@
+/* ============================================
+   HERO PROFIL
+   ============================================ */
+.profil-hero {
+    position: relative;
+    height: 460px;
+    overflow: hidden;
+}
+
+.profil-hero .hero-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+.profil-hero .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(12,46,100,0.85) 0%, rgba(12,46,100,0.4) 60%, rgba(12,46,100,0.15) 100%);
+}
+
+.profil-hero-content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    color: var(--white);
+}
+
+.profil-hero-content h1 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+    position: relative;
+    z-index: 3;
+}
+
+.profil-hero-content p {
+    max-width: 480px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 3;
+}
+
+/* ============================================
+   SEJARAH & KEPALA SEKOLAH
+   ============================================ */
+.sejarah {
+    max-width: var(--container-width);
+    margin: 3.5rem auto;
+    padding: 0 1.5rem;
+}
+
+.sejarah-container {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 1.5rem;
+}
+
+.sejarah-card,
+.kepsek-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 2rem;
+}
+
+.sejarah-card h2,
+.kepsek-card h2 {
+    color: var(--navy-900);
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+}
+
+.sejarah-photo {
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+}
+
+.sejarah-card p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+}
+
+.kepsek-card {
+    text-align: center;
+}
+
+.kepsek-photo {
+    width: 180px;
+    height: 200px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 0 auto 1.25rem;
+}
+
+.kepsek-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.kepsek-card h3 {
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+}
+
+.kepsek-label {
+    color: var(--navy-900);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.kepsek-pesan {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-align: left;
+    margin-bottom: 0.85rem;
+}
+
+.kepsek-jabatan {
+    color: var(--navy-900);
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+/* ============================================
+   VISI & MISI
+   ============================================ */
+.section-title-center {
+    text-align: center;
+    color: var(--navy-900);
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+}
+
+.visi-misi {
+    max-width: var(--container-width);
+    margin: 3.5rem auto;
+    padding: 0 1.5rem;
+}
+
+.visimisi-container {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 1.5rem;
+}
+
+.visi-box,
+.misi-box {
+    border-radius: var(--radius);
+    padding: 2.25rem;
+}
+
+.visi-box {
+    background: var(--navy-900);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.visi-box h3 {
+    margin: 0.75rem 0 1rem;
+    font-size: 1.15rem;
+}
+
+.visi-box p {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+}
+
+.misi-box {
+    background: var(--gray-bg);
+}
+
+.misi-box h3 {
+    color: var(--navy-900);
+    margin: 0.75rem 0 1.25rem;
+    font-size: 1.15rem;
+}
+
+.vm-icon { font-size: 1.6rem; }
+
+.misi-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.misi-check {
+    color: var(--navy-900);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   STRUKTUR ORGANISASI
+   ============================================ */
+.struktur {
+    max-width: var(--container-width);
+    margin: 3.5rem auto 4.5rem;
+    padding: 0 1.5rem;
+}
+
+.struktur-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.struktur-box {
+    background: var(--white);
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 0.9rem 1.5rem;
+    text-align: center;
+    min-width: 220px;
+}
+
+.struktur-box-kepala {
+    background: var(--navy-900);
+    border: none;
+    color: var(--white);
+    min-width: 260px;
+}
+
+.struktur-jabatan {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.struktur-box-kepala .struktur-jabatan {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.struktur-box strong {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.struktur-box-kepala strong {
+    color: var(--white);
+    font-size: 1.05rem;
+}
+
+.struktur-level1 {
+    position: relative;
+    padding-bottom: 2.5rem;
+}
+.struktur-level1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    height: 2.5rem;
+    background: #cbd5e1;
+}
+
+.struktur-level2 {
+    position: relative;
+    display: flex;
+    gap: 4rem;
+    padding-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+.struktur-level2::before {
+    content: '';
+    position: absolute;
+    top: -2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 220px);
+    height: 2px;
+    background: #cbd5e1;
+}
+.struktur-level2 .struktur-box {
+    position: relative;
+}
+.struktur-level2 .struktur-box::before {
+    content: '';
+    position: absolute;
+    top: -2.5rem;
+    left: 50%;
+    width: 2px;
+    height: 2.5rem;
+    background: #cbd5e1;
+}
+
+.struktur-level3 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    width: 100%;
+    padding-top: 1.5rem;
+    border-top: 2px solid #cbd5e1;
+}
+
+.struktur-box-sm {
+    background: var(--gray-bg);
+    min-width: unset;
+    padding: 0.75rem 1rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+    .sejarah-container,
+    .visimisi-container {
+        grid-template-columns: 1fr;
+    }
+    .struktur-level2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .struktur-level2::before,
+    .struktur-level2 .struktur-box::before {
+        display: none;
+    }
+    .struktur-level3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================
+   TUJUAN KAMI
+   ============================================ */
+.tujuan {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+.tujuan-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: -1rem;
+    margin-bottom: 2.5rem;
+}
+
+.tujuan-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tujuan-list li {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    background: var(--white);
+    border: 1px solid #e5e9f0;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.tujuan-number {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    background: var(--navy-900);
+    color: var(--white);
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tujuan-list strong {
+    display: block;
+    color: var(--navy-900);
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.tujuan-list p {
+    color: var(--text-dark);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}

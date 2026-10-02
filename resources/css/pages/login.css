@@ -1,0 +1,301 @@
+/* ============================================
+   HALAMAN LOGIN ADMIN
+   ============================================ */
+.login-body {
+    margin: 0;
+    min-height: 100vh;
+    background: none;
+}
+
+.login-page {
+    position: relative;
+    flex: 1 0 auto;          /* mengisi seluruh tinggi body, tidak ada sisa kosong */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 1.5rem 0;
+    box-sizing: border-box;
+}
+
+/* Latar ikut bergerak saat di-scroll */
+.login-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.login-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.08);
+    z-index: 1;
+}
+
+.login-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 480px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+}
+
+.login-brand {
+    margin-bottom: 1.75rem;
+}
+
+.login-logo {
+    width: 76px;
+    height: 76px;
+    background: var(--white);
+    border-radius: 12px;
+    padding: 8px;
+    margin: 0 auto 1rem;
+    object-fit: contain;
+    box-shadow: var(--shadow);
+}
+
+.login-brand h1 {
+    color: var(--white);
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    margin-bottom: 0.4rem;
+}
+
+.login-brand span {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.login-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    padding: 2.25rem 2rem;
+    text-align: left;
+}
+
+.login-card h2 {
+    color: var(--text-dark);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.login-card > p {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    margin-bottom: 1.5rem;
+}
+
+.login-error {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
+}
+
+.login-card label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    margin-top: 1.1rem;
+}
+
+/* Input email, teks, dan kata sandi: tampilan & tinggi sama */
+.login-card input[type="email"],
+.login-card input[type="text"],
+.login-card input[type="password"] {
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding: 0 1.1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #f4f6fb;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.login-card input::placeholder {
+    color: #94a3b8;
+}
+
+.login-card input[type="email"]:focus,
+.login-card input[type="text"]:focus,
+.login-card input[type="password"]:focus {
+    outline: none;
+    background: var(--white);
+    border-color: var(--navy-900);
+    box-shadow: 0 0 0 4px rgba(12, 46, 100, 0.12);
+}
+
+/* Kotak centang "Ingat saya" tidak ikut gaya input di atas */
+.login-card input[type="checkbox"] {
+    width: auto;
+    height: auto;
+    padding: 0;
+    box-shadow: none;
+}
+
+.login-password-wrap {
+    position: relative;
+}
+
+/* Ruang untuk ikon mata */
+.login-card .login-password-wrap input {
+    padding-right: 2.75rem;
+}
+
+.login-toggle-eye {
+    position: absolute;
+    right: 0.9rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+}
+
+.login-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.1rem;
+    font-size: 0.85rem;
+}
+
+.login-remember {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    margin-top: 0;
+}
+
+.login-options a {
+    color: var(--navy-900);
+    font-weight: 600;
+}
+
+.login-options a:hover { text-decoration: underline; }
+
+.login-submit {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+}
+
+.login-footer-help {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.login-footer-help a {
+    color: var(--navy-900);
+    font-weight: 600;
+}
+
+/* Ikon panah di samping teks, tidak jatuh ke baris baru */
+.login-footer-help svg {
+    display: inline-block;
+    vertical-align: middle;
+    width: 14px;
+    height: 14px;
+}
+
+.login-back {
+    display: inline-block;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.login-copyright {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Tombol kembali ke atas tidak perlu di halaman login */
+.login-body .back-to-top {
+    display: none !important;
+}
+
+/* ============================================
+   HALAMAN LUPA KATA SANDI
+   ============================================ */
+.forgot-icon {
+    width: 56px;
+    height: 56px;
+    background: #eaf1fc;
+    color: var(--navy-900);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+}
+
+.forgot-contact-box {
+    background: var(--gray-bg);
+    border-radius: 10px;
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.forgot-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    color: var(--navy-900);
+}
+
+.forgot-contact-item strong {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+}
+
+.forgot-contact-item span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.forgot-back-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+}

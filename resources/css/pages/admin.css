@@ -1,0 +1,1774 @@
+/* ============================================
+   ADMIN LAYOUT
+   ============================================ */
+.admin-body { background: var(--gray-bg); }
+
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Sidebar --- */
+.admin-sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    background: var(--navy-900);
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem 1.25rem;
+}
+
+.admin-sidebar-top h1 {
+    color: var(--white);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.admin-sidebar-top span {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.72rem;
+    letter-spacing: 0.5px;
+}
+
+.admin-new-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #3b6fd6;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin: 1.5rem 0 1.5rem;
+}
+
+.admin-new-btn:hover { background: #2f5cb8; }
+
+.admin-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    flex: 1;
+}
+
+.admin-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.75rem 0.9rem;
+    border-radius: 8px;
+}
+
+.admin-nav-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--white);
+}
+
+.admin-nav-link.active {
+    background: var(--gold);
+    color: var(--navy-900);
+    font-weight: 700;
+}
+
+.admin-sidebar-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 1.25rem;
+    margin-top: 1rem;
+}
+
+.admin-user-mini {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.admin-user-mini strong {
+    color: var(--white);
+    font-size: 0.9rem;
+}
+
+.admin-user-mini span {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.72rem;
+    letter-spacing: 0.5px;
+}
+
+.admin-logout-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #dc2626;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.admin-logout-btn:hover { background: #b91c1c; }
+
+/* --- Main content --- */
+.admin-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-topbar {
+    background: var(--white);
+    border-bottom: 1px solid #e5e9f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+.admin-breadcrumb {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.admin-breadcrumb strong { color: var(--navy-900); }
+
+.admin-topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.admin-notif-btn {
+    position: relative;
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    cursor: pointer;
+    display: flex;
+}
+
+.admin-notif-dot {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    background: #dc2626;
+    border-radius: 50%;
+}
+
+.admin-user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.admin-user-text {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.admin-user-text strong {
+    font-size: 0.88rem;
+    color: var(--text-dark);
+}
+
+.admin-user-text span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.admin-user-avatar {
+    width: 38px;
+    height: 38px;
+    background: var(--navy-900);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.admin-content {
+    padding: 2rem;
+}
+
+/* ============================================
+   DASHBOARD CONTENT
+   ============================================ */
+.admin-welcome {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 0.4rem;
+}
+
+.admin-subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.75rem;
+}
+
+.admin-section-title {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.admin-stat-card {
+    background: var(--white);
+    border: 1px solid #e5e9f0;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.admin-stat-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-stat-icon-artikel { background: #e0e9fb; color: #2455c9; }
+.admin-stat-icon-produk { background: #f3ead4; color: #92640a; }
+.admin-stat-icon-ekskul { background: #d9f2e6; color: #16a06b; }
+.admin-stat-icon-galeri { background: #fdecd2; color: #b06a12; }
+
+.admin-stat-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-stat-label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin-bottom: 0.35rem;
+}
+
+.admin-stat-value {
+    font-size: 1.6rem;
+    color: var(--text-dark);
+    margin-bottom: 0.3rem;
+}
+
+.admin-stat-note {
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.admin-stat-note-up { color: #16a06b; }
+.admin-stat-note-ok { color: #16a06b; }
+.admin-stat-note-flat { color: var(--text-muted); }
+
+.admin-activity-box {
+    background: var(--white);
+    border: 1px solid #e5e9f0;
+    border-radius: var(--radius);
+    padding: 1.75rem;
+}
+
+.admin-activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.admin-activity-header h3 {
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.admin-activity-header a {
+    font-size: 0.85rem;
+    color: var(--navy-900);
+    font-weight: 600;
+}
+
+.admin-activity-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
+}
+
+.admin-activity-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-activity-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+}
+
+.admin-activity-icon-artikel-baru { background: #2455c9; color: var(--white); }
+.admin-activity-icon-produk-update { background: #92640a; color: var(--white); }
+.admin-activity-icon-komentar-hapus { background: #fca5a5; color: #7f1d1d; }
+.admin-activity-icon-siswa-baru { background: #a7d8c5; color: #14532d; }
+.admin-activity-icon-sistem-update { background: #e2e8f0; color: var(--text-dark); }
+
+.admin-activity-item h4 {
+    font-size: 0.88rem;
+    color: var(--text-dark);
+    margin-bottom: 0.35rem;
+}
+
+.admin-activity-item p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+.admin-activity-item span {
+    font-size: 0.72rem;
+    color: #9ca3af;
+}
+
+/* ============================================
+   RESPONSIVE (DASHBOARD)
+   ============================================ */
+@media (max-width: 1100px) {
+    .admin-stats-grid { grid-template-columns: 1fr 1fr; }
+    .admin-activity-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 800px) {
+    .admin-layout { flex-direction: column; }
+    .admin-sidebar { width: 100%; }
+}
+
+/* ============================================
+   HALAMAN MANAJEMEN ARTIKEL (ADMIN)
+   ============================================ */
+.admin-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.75rem;
+}
+
+.admin-page-title {
+    font-size: 1.5rem;
+    color: var(--navy-900);
+    margin-bottom: 0.4rem;
+}
+
+.admin-breadcrumb-inline {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.admin-breadcrumb-inline a { color: var(--text-muted); }
+.admin-breadcrumb-inline strong { color: var(--navy-900); }
+
+.admin-add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.admin-toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #1e293b;
+    color: var(--white);
+    padding: 0.9rem 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    z-index: 100;
+}
+
+.admin-toast svg { color: #4ade80; flex-shrink: 0; }
+
+.admin-stats-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 700px;
+}
+
+.admin-stat-icon-published { background: #d1fae5; color: #059669; }
+
+.admin-table-box {
+    background: var(--white);
+    border: 1px solid #e5e9f0;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+}
+
+.admin-table-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.admin-search-form {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--gray-bg);
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    flex: 1;
+    min-width: 220px;
+    color: var(--text-muted);
+}
+
+.admin-search-form input {
+    border: none;
+    background: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 0.88rem;
+    width: 100%;
+}
+
+.admin-table-actions {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.admin-filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--white);
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table thead {
+    background: var(--gray-bg);
+}
+
+.admin-table th {
+    text-align: left;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    padding: 0.9rem 1rem;
+}
+
+.admin-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.admin-table-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.admin-table-title img {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.admin-badge-publish {
+    background: #d1fae5;
+    color: #059669;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+}
+
+.admin-table-aksi {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.admin-icon-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+.admin-icon-edit { color: #2455c9; }
+.admin-icon-edit:hover { background: #e0e9fb; }
+
+.admin-icon-delete { color: #dc2626; }
+.admin-icon-delete:hover { background: #fee2e2; }
+
+.admin-table-empty {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 2rem !important;
+}
+
+.admin-table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.25rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.admin-pagination {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.admin-page-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.admin-page-btn.active {
+    background: var(--navy-900);
+    color: var(--white);
+    border-color: var(--navy-900);
+}
+
+.admin-page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+@media (max-width: 700px) {
+    .admin-page-header { flex-direction: column; gap: 1rem; }
+    .admin-table { display: block; overflow-x: auto; white-space: nowrap; }
+}
+
+/* ============================================
+   FORM ARTIKEL (VERSI BARU - SESUAI DESAIN)
+   ============================================ */
+.admin-form-row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 1.5rem;
+}
+
+.required { color: #dc2626; }
+
+.admin-upload-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    aspect-ratio: 1 / 1;
+    border: 2px dashed #cbd5e1;
+    border-radius: 10px;
+    background: var(--gray-bg);
+    color: var(--text-muted);
+    cursor: pointer;
+    text-align: center;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.admin-upload-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.admin-upload-box strong {
+    color: var(--navy-900);
+    font-size: 0.9rem;
+}
+
+.admin-upload-box span {
+    font-size: 0.75rem;
+}
+
+.admin-form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+.admin-form-box select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    background: var(--white);
+}
+
+.admin-form-divider {
+    border: none;
+    border-top: 1px solid #e5e9f0;
+    margin: 1.75rem 0;
+}
+
+.admin-editor-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: var(--gray-bg);
+    border: 1px solid #e2e8f0;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    padding: 0.6rem 0.75rem;
+}
+
+.admin-editor-toolbar button {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    border-radius: 4px;
+    color: var(--text-dark);
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.admin-editor-toolbar button:hover { background: #e2e8f0; }
+
+.admin-editor-divider {
+    width: 1px;
+    height: 18px;
+    background: #cbd5e1;
+    margin: 0 0.3rem;
+}
+
+.admin-editor-textarea {
+    border-radius: 0 0 8px 8px !important;
+    margin-top: 0 !important;
+    resize: vertical;
+    font-family: inherit;
+    min-height: 350px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+    .admin-form-row { grid-template-columns: 1fr; }
+    .admin-form-row-2 { grid-template-columns: 1fr; }
+}
+
+/* ============================================
+   HALAMAN MANAJEMEN PRODUK (ADMIN)
+   ============================================ */
+.admin-produk-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.75rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.admin-produk-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.admin-produk-title-row h2 {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+}
+
+.admin-badge-total {
+    background: var(--navy-900);
+    color: var(--white);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+}
+
+.admin-produk-name {
+    display: block;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.92rem;
+}
+
+.admin-produk-kategori {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 0.15rem;
+}
+
+.admin-produk-price {
+    font-weight: 700;
+    color: var(--navy-900);
+}
+
+.admin-stok-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #2563eb;
+    margin-right: 0.4rem;
+}
+
+.admin-stats-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 1.5rem;
+}
+
+.admin-simple-stat {
+    background: var(--white);
+    border: 1px solid #e5e9f0;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.admin-simple-stat span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.admin-simple-stat strong {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+}
+
+.admin-info-box {
+    display: flex;
+    gap: 0.9rem;
+    background: #eaf1fc;
+    color: #1e3a8a;
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.admin-info-box strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.92rem;
+}
+
+.admin-info-box p {
+    font-size: 0.85rem;
+    color: #3151a3;
+    line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+    .admin-stats-grid-4 { grid-template-columns: 1fr 1fr; }
+}
+
+/* ============================================
+   FORM TAMBAH/EDIT PRODUK
+   ============================================ */
+.admin-form-box-wide {
+    max-width: 900px;
+}
+
+.admin-input-prefix {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.admin-input-prefix span {
+    background: var(--gray-bg);
+    padding: 0.75rem 1rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-right: 1px solid #e2e8f0;
+}
+
+.admin-input-prefix input {
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+/* ============================================
+   HALAMAN EKSTRAKURIKULER (ADMIN)
+   ============================================ */
+.admin-tabs {
+    display: flex;
+    gap: 2rem;
+    border-bottom: 1px solid #e5e9f0;
+    margin-bottom: 1.75rem;
+}
+
+.admin-tab {
+    padding-bottom: 0.9rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    border-bottom: 2px solid transparent;
+}
+
+.admin-tab.active {
+    color: var(--navy-900);
+    border-bottom-color: var(--navy-900);
+}
+
+.admin-ekskul-img {
+    width: 52px;
+    height: 52px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.admin-ekskul-name { color: var(--navy-900); font-size: 0.92rem; }
+
+.admin-ekskul-desc {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    max-width: 320px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4;
+}
+
+.admin-badge-nonaktif {
+    background: #fee2e2;
+    color: #b91c1c;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+}
+
+.admin-form-subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 0.4rem;
+}
+
+.admin-upload-box-wide {
+    aspect-ratio: auto;
+    height: 180px;
+    flex-direction: column;
+}
+
+.admin-upload-box-wide img { object-fit: contain; }
+
+.admin-upload-note { display: block; margin-top: 0.2rem; }
+
+.admin-radio-group {
+    display: flex;
+    gap: 2rem;
+    margin-top: 0.75rem;
+}
+
+.admin-radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    margin-top: 0 !important;
+}
+
+.admin-radio-option input { width: auto; }
+
+.admin-cancel-link {
+    display: flex;
+    align-items: center;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   HALAMAN MANAJEMEN GALERI (ADMIN)
+   ============================================ */
+.admin-stats-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 900px;
+}
+
+.admin-stat-icon-galeri-total { background: #e0e9fb; color: #2455c9; }
+.admin-stat-icon-foto { background: #f1f5f9; color: #64748b; }
+.admin-stat-icon-kategori { background: #dbeafe; color: #2563eb; }
+
+.admin-filter-form { display: inline-block; }
+
+.admin-filter-select {
+    background: var(--white);
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+.admin-galeri-img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.admin-badge-kategori {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    color: var(--white);
+    white-space: nowrap;
+}
+
+.admin-badge-kegiatan { background: #2455c9; }
+.admin-badge-semua { background: #92640a; }
+.admin-badge-prestasi { background: #fdecd2; color: #b06a12; }
+.admin-badge-fasilitas { background: #dbeafe; color: #2563eb; }
+
+.admin-form-label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    margin-bottom: 0.6rem;
+}
+
+.admin-file-input { display: none; }
+
+.admin-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.admin-form-actions .btn {
+    margin-top: 0;
+}
+
+@media (max-width: 900px) {
+    .admin-stats-grid-3 { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 700px) {
+    .admin-form-actions { flex-direction: column-reverse; }
+}
+
+/* ============================================
+   FORM TAMBAH/EDIT PRODUK
+   ============================================ */
+.admin-form-box-wide {
+    max-width: 100%;
+}
+
+/* ============================================
+   TOMBOL OUTLINE (BATAL, DLL)
+   ============================================ */
+.btn.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.btn.btn-outline:hover {
+    background: var(--gray-bg);
+    border-color: #94a3b8;
+}
+
+/* ============================================
+   HALAMAN SEMUA AKTIVITAS (ADMIN)
+   ============================================ */
+.admin-activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.admin-activity-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.admin-activity-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.admin-activity-row .admin-activity-icon {
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
+
+.admin-activity-row-body {
+    flex: 1;
+}
+
+.admin-activity-row-body h4 {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    margin-bottom: 0.2rem;
+}
+
+.admin-activity-row-body p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.admin-activity-row-time {
+    font-size: 0.78rem;
+    color: #9ca3af;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+    .admin-activity-row {
+        flex-wrap: wrap;
+    }
+    .admin-activity-row-time {
+        margin-left: calc(36px + 1rem);
+    }
+}
+
+/* ============================================
+   DROPDOWN NOTIFIKASI
+   ============================================ */
+.admin-notif-wrap {
+    position: relative;
+}
+
+.admin-notif-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 320px;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    z-index: 200;
+    overflow: hidden;
+}
+
+.admin-notif-dropdown.show { display: block; }
+
+.admin-notif-dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #e5e9f0;
+}
+
+.admin-notif-dropdown-header strong {
+    font-size: 0.92rem;
+    color: var(--text-dark);
+}
+
+.admin-notif-markread {
+    background: none;
+    border: none;
+    color: var(--navy-900);
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.admin-notif-list {
+    max-height: 340px;
+    overflow-y: auto;
+}
+
+.admin-notif-item {
+    padding: 0.9rem 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.admin-notif-item.unread { background: #eaf1fc; }
+
+.admin-notif-item strong {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    margin-bottom: 0.2rem;
+}
+
+.admin-notif-item p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+}
+
+.admin-notif-item span {
+    font-size: 0.72rem;
+    color: #9ca3af;
+}
+
+.admin-notif-empty {
+    padding: 2rem 1.25rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* ============================================
+   DETAIL & BALAS PESAN
+   ============================================ */
+.admin-back-btn {
+    background: var(--white);
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.65rem 1.1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.admin-toast-error { background: #991b1b; }
+
+.reply-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.reply-card {
+    background: var(--white);
+    border: 1px solid #e5e9f0;
+    border-radius: 14px;
+    padding: 1.75rem;
+}
+
+.reply-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+    gap: 1rem;
+}
+
+.reply-label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin: 1.1rem 0 0.5rem;
+}
+
+.reply-card-head .reply-label { margin: 0; }
+
+.reply-sender {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    margin-bottom: 0.5rem;
+}
+
+.reply-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #e0e9fb;
+    color: #2455c9;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reply-sender strong { display: block; color: var(--text-dark); }
+.reply-sender span { display: block; font-size: 0.85rem; color: var(--text-muted); }
+.reply-sender small { font-size: 0.75rem; color: #9ca3af; }
+
+.reply-subject-box {
+    background: var(--gray-bg);
+    border: 1px solid #e5e9f0;
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 0.92rem;
+}
+
+.reply-message-box {
+    background: var(--gray-bg);
+    border: 1px solid #e5e9f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+    font-size: 0.92rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    white-space: pre-line;
+}
+
+.reply-sent-note {
+    margin-top: 1rem;
+    background: #d1fae5;
+    color: #065f46;
+    font-size: 0.8rem;
+    padding: 0.6rem 0.9rem;
+    border-radius: 8px;
+}
+
+.reply-card-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f1f5f9;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.reply-delete {
+    background: none;
+    border: none;
+    color: #dc2626;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.82rem;
+}
+
+.reply-title { font-size: 1.2rem; color: var(--text-dark); }
+.reply-desc { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+.reply-mailer-badge {
+    background: #eaf1fc;
+    color: #2455c9;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.45rem 0.8rem;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.reply-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.reply-row .reply-label { margin-top: 0; }
+
+.reply-locked {
+    background: var(--gray-bg);
+    border: 1px solid #e5e9f0;
+    border-radius: 8px;
+    padding: 0.7rem 0.9rem;
+    font-size: 0.82rem;
+    color: var(--text-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.reply-locked span {
+    background: #e2e8f0;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+.reply-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.reply-editor {
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.reply-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: var(--gray-bg);
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.reply-toolbar button {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.reply-toolbar button:hover { background: #e2e8f0; }
+
+.reply-toolbar-note {
+    margin-left: auto;
+    font-size: 0.72rem;
+    font-style: italic;
+    color: #9ca3af;
+}
+
+.reply-editable {
+    min-height: 260px;
+    padding: 1rem 1.1rem;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    outline: none;
+}
+
+.reply-attach {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-top: 1.25rem;
+    padding: 1rem;
+    border: 1px dashed #cbd5e1;
+    border-radius: 10px;
+    cursor: pointer;
+    background: var(--gray-bg);
+}
+
+.reply-attach-icon {
+    background: #fee2e2;
+    color: #b91c1c;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 0.7rem 0.6rem;
+    border-radius: 8px;
+}
+
+.reply-attach strong { display: block; font-size: 0.85rem; }
+.reply-attach small { font-size: 0.72rem; color: var(--text-muted); }
+.reply-attach-link { margin-left: auto; color: #2455c9; font-weight: 600; font-size: 0.85rem; }
+
+.reply-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.reply-btn-outline,
+.reply-btn-cancel {
+    display: inline-block;
+    padding: 0.7rem 1.1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.reply-btn-outline { background: var(--white); border: 1px solid #cbd5e1; color: var(--text-dark); }
+.reply-btn-cancel { border: 1px solid #fecaca; color: #dc2626; margin-left: 0.5rem; }
+
+.reply-btn-send {
+    background: var(--navy-900);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 0.85rem 1.5rem;
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.reply-btn-send:hover { background: var(--navy-800); }
+
+@media (max-width: 1000px) {
+    .reply-layout { grid-template-columns: 1fr; }
+    .reply-row { grid-template-columns: 1fr; }
+}
+
+/* ============================================
+   FORM PRODUK (VERSI BARU - DUA KOLOM)
+   ============================================ */
+.produk-form-layout {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.produk-form-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.produk-form-col-main h3 {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+}
+
+.produk-form-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.produk-form-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.produk-form-card-head h3 {
+    font-size: 0.98rem;
+    color: var(--text-dark);
+}
+
+.produk-form-card-head p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 0.15rem;
+}
+
+.produk-badge-wajib {
+    background: #fef3c7;
+    color: #92400e;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.produk-upload-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    aspect-ratio: 1 / 1;
+    border: 2px dashed #cbd5e1;
+    border-radius: 10px;
+    background: var(--gray-bg);
+    color: var(--text-muted);
+    cursor: pointer;
+    text-align: center;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.produk-upload-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.produk-upload-box strong {
+    color: var(--navy-900);
+    font-size: 0.92rem;
+}
+
+.produk-upload-box span {
+    font-size: 0.78rem;
+}
+
+.produk-upload-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--white);
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.3rem;
+}
+
+.produk-upload-max {
+    background: #e2e8f0;
+    color: var(--text-dark);
+    font-size: 0.72rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    margin-top: 0.2rem;
+}
+
+.produk-hint-box {
+    display: flex;
+    gap: 0.6rem;
+    background: #eaf1fc;
+    color: #1e3a8a;
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    margin-top: 1rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.produk-visibilitas-title {
+    font-size: 0.98rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.produk-toggle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.produk-toggle-row strong {
+    font-size: 0.88rem;
+    color: var(--text-dark);
+}
+
+.produk-toggle-row p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 0.15rem;
+}
+
+.produk-switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.produk-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.produk-switch span {
+    position: absolute;
+    inset: 0;
+    background: #cbd5e1;
+    border-radius: 999px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.produk-switch span::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 3px;
+    top: 3px;
+    background: var(--white);
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.produk-switch input:checked + span {
+    background: var(--gold);
+}
+
+.produk-switch input:checked + span::before {
+    transform: translateX(20px);
+}
+
+.produk-desc-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.produk-desc-max {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+    .produk-form-layout { grid-template-columns: 1fr; }
+}
+
+/* ============================================
+   INPUT FIELDS DI FORM ADMIN (ARTIKEL, PRODUK, EKSTRAKURIKULER)
+   ============================================ */
+.produk-form-col-main input[type="text"],
+.produk-form-col-main input[type="date"],
+.produk-form-col-main input[type="number"],
+.produk-form-col-main select,
+.produk-form-col-main textarea:not(.admin-editor-textarea) {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+    margin-top: 0.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    background: var(--white);
+    transition: border-color 0.15s ease;
+}
+
+.produk-form-col-main input[type="text"]:focus,
+.produk-form-col-main input[type="date"]:focus,
+.produk-form-col-main input[type="number"]:focus,
+.produk-form-col-main select:focus,
+.produk-form-col-main textarea:not(.admin-editor-textarea):focus {
+    outline: none;
+    border-color: var(--navy-900);
+}
+
+.produk-form-col-main .admin-editor-textarea {
+    border: 1px solid #e2e8f0;
+    border-top: none;
+}
+
+/* ===== Input tanggal (samakan dengan select Kategori) ===== */
+input[type="date"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 58px;
+    padding: 0 20px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #1e293b;
+    cursor: pointer;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+input[type="date"]:hover {
+    border-color: #cbd5e1;
+}
+
+input[type="date"]:focus {
+    outline: none;
+    border-color: #0f2a5c;
+    box-shadow: 0 0 0 4px rgba(15, 42, 92, 0.12);
+}
+
+input[type="date"]::-webkit-datetime-edit {
+    padding: 0;
+}
+input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+}
+input[type="date"]:invalid::-webkit-datetime-edit {
+    color: #94a3b8;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: .55;
+    padding: 6px;
+    border-radius: 8px;
+    transition: opacity .2s ease, background .2s ease;
+}
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+    background: #f1f5f9;
+}
+
+/* Jarak kotak statistik Total Produk & Kategori dari tabel di atasnya */
+.admin-table-box + .admin-stats-grid-2 {
+    margin-top: 1.5rem;
+}

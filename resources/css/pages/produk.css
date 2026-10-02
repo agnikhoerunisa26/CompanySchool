@@ -1,0 +1,152 @@
+/* ============================================
+   HERO PRODUK
+   ============================================ */
+.produk-hero {
+    background: var(--navy-900);
+    padding: 3rem 1.5rem 3.5rem;
+    text-align: center;
+}
+
+.produk-hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--white);
+}
+
+.breadcrumb-light {
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1rem;
+}
+
+.breadcrumb-light a {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.produk-hero-content h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+}
+
+.produk-hero-content p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   ALERT
+   ============================================ */
+.produk-alert {
+    max-width: var(--container-width);
+    margin: 1.5rem auto 0;
+    padding: 0.9rem 1.5rem;
+    background: #d1fae5;
+    color: #065f46;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   DAFTAR PRODUK
+   ============================================ */
+.produk-list {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+}
+
+.produk-title {
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    margin-bottom: 1.75rem;
+}
+
+.produk-title strong {
+    color: var(--text-dark);
+}
+
+.produk-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.produk-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.produk-thumb {
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: var(--gray-bg);
+}
+
+.produk-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.produk-body {
+    padding: 1.1rem 1.25rem 1.4rem;
+}
+
+.produk-body h3 {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+}
+
+.produk-kategori {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.produk-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.produk-price {
+    font-weight: 700;
+    color: var(--navy-900);
+    font-size: 1rem;
+}
+
+.cart-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--navy-900);
+    background: var(--white);
+    color: var(--navy-900);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cart-btn:hover {
+    background: var(--navy-900);
+    color: var(--white);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+    .produk-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 500px) {
+    .produk-grid { grid-template-columns: 1fr; }
+}

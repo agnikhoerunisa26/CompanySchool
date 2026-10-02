@@ -1,0 +1,245 @@
+/* ============================================
+   KERANJANG
+   ============================================ */
+.keranjang-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+}
+
+.keranjang-section h1 {
+    font-size: 1.6rem;
+    color: var(--navy-900);
+    margin-bottom: 1.5rem;
+}
+
+.keranjang-empty {
+    background: var(--gray-bg);
+    border-radius: var(--radius);
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.keranjang-empty p {
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+}
+
+.keranjang-table {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.keranjang-row {
+    display: grid;
+    grid-template-columns: 70px 1fr 90px 120px 40px;
+    align-items: center;
+    gap: 1rem;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1rem;
+}
+
+.keranjang-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.keranjang-info h3 {
+    font-size: 0.92rem;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+}
+
+.keranjang-info span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.keranjang-qty input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.keranjang-subtotal {
+    font-weight: 700;
+    color: var(--navy-900);
+    font-size: 0.9rem;
+}
+
+.keranjang-remove {
+    background: none;
+    border: none;
+    color: #dc2626;
+    font-size: 1.4rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.keranjang-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--gray-bg);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-top: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.keranjang-total strong {
+    color: var(--navy-900);
+    font-size: 1.3rem;
+}
+
+.keranjang-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn-outline-navy {
+    border: 2px solid var(--navy-900);
+    color: var(--navy-900);
+    background: var(--white);
+}
+
+.btn-outline-navy:hover {
+    background: var(--gray-bg);
+}
+
+/* ============================================
+   CHECKOUT
+   ============================================ */
+.checkout-section {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+}
+
+.checkout-section h1 {
+    font-size: 1.6rem;
+    color: var(--navy-900);
+    margin-bottom: 1.75rem;
+}
+
+.checkout-wrapper {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 2rem;
+}
+
+.checkout-form-box,
+.checkout-summary-box {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.75rem;
+}
+
+.checkout-form-box h2,
+.checkout-summary-box h2 {
+    font-size: 1.1rem;
+    color: var(--navy-900);
+    margin-bottom: 1.25rem;
+}
+
+.checkout-form-box label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.4rem;
+    margin-top: 1rem;
+}
+
+.checkout-form-box input,
+.checkout-form-box textarea {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.form-error {
+    color: #dc2626;
+    font-size: 0.78rem;
+    display: block;
+    margin-top: 0.3rem;
+}
+
+.checkout-submit {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.checkout-summary-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.checkout-summary-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.checkout-summary-total strong {
+    color: var(--navy-900);
+    font-size: 1.2rem;
+}
+
+@media (max-width: 800px) {
+    .checkout-wrapper { grid-template-columns: 1fr; }
+    .keranjang-row { grid-template-columns: 60px 1fr 40px; }
+    .keranjang-qty, .keranjang-subtotal { grid-column: span 3; }
+}
+
+/* ============================================
+   CHECKOUT SUKSES
+   ============================================ */
+.checkout-sukses {
+    max-width: 500px;
+    margin: 4rem auto;
+    text-align: center;
+    padding: 0 1.5rem;
+}
+
+.sukses-icon {
+    width: 70px;
+    height: 70px;
+    background: #16a06b;
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 1.5rem;
+}
+
+.checkout-sukses h1 {
+    font-size: 1.5rem;
+    color: var(--navy-900);
+    margin-bottom: 0.75rem;
+}
+
+.checkout-sukses p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}

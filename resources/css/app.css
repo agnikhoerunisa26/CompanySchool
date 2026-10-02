@@ -1,0 +1,311 @@
+/* ============================================
+   IMPORT CSS PER HALAMAN
+   (tambahkan baris baru di sini setiap kali
+   membuat halaman baru)
+   ============================================ */
+@import './animations.css';
+@import './interactions.css';
+@import './pages/home.css';
+@import './pages/profil.css';
+@import './pages/artikel.css';
+@import './pages/galeri.css';
+@import './pages/ekstrakurikuler.css';
+@import './pages/produk.css';
+@import './pages/kontak.css';
+@import './pages/login.css';
+@import './pages/admin.css';
+
+/* ============================================
+   RESET & VARIABEL WARNA
+   ============================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --navy-900: #0c2e64;
+    --navy-800: #123a7a;
+    --gold: #f2a413;
+    --gray-bg: #f4f6f9;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --white: #ffffff;
+    --radius: 10px;
+    --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    --container-width: 1140px;
+}
+
+html {
+    overflow-x: clip;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    max-width: 100%;
+    min-height: 100vh;
+    overflow-x: clip;
+    display: flex;
+    flex-direction: column;
+}
+
+body > main {
+    flex: 1 0 auto;
+}
+
+body > .footer {
+    flex-shrink: 0;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+h1, h2, h3, h4 { line-height: 1.25; }
+
+/* ============================================
+   TOMBOL (dipakai lintas halaman)
+   ============================================ */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.btn-gold { background: var(--gold); color: var(--navy-900); }
+.btn-gold:hover { background: #d99206; }
+
+.btn-outline-white { border-color: var(--white); color: var(--white); }
+.btn-outline-white:hover { background: rgba(255, 255, 255, 0.1); }
+
+.btn-outline-light {
+    border-color: rgba(255, 255, 255, 0.6);
+    color: var(--white);
+    padding: 0.5rem 1.25rem;
+    font-size: 0.85rem;
+}
+.btn-outline-light:hover { background: rgba(255, 255, 255, 0.1); }
+
+.btn-navy { background: var(--navy-900); color: var(--white); margin-top: 2rem; }
+.btn-navy:hover { background: var(--navy-800); }
+
+.link-arrow { color: var(--navy-900); font-weight: 600; font-size: 0.9rem; }
+.link-arrow:hover { text-decoration: underline; }
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar {
+    background: var(--navy-900);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.navbar-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    gap: 3rem;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.navbar-logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 6px;
+    background: var(--white);
+    padding: 3px;
+    object-fit: contain;
+}
+
+/* Menu: mengisi ruang di antara brand dan tombol login, lalu rata tengah */
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--white);
+    border-bottom-color: var(--gold);
+}
+
+.cart-icon-link {
+    position: relative;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--gold);
+    color: var(--navy-900);
+    font-size: 0.7rem;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.navbar-toggle span { width: 22px; height: 2px; background: var(--white); }
+
+/* Tombol login desktop (di luar <nav>) */
+.navbar-login {
+    flex-shrink: 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 6px;
+    padding: 0.55rem 1.25rem;
+    transition: background 0.2s ease;
+}
+
+.navbar-login:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+}
+
+/* Link login versi HP: selalu disembunyikan */
+.nav-login-mobile { display: none !important; }
+
+/* Layar menengah: rapatkan sedikit supaya menu muat */
+@media (max-width: 1200px) {
+    .navbar-container { gap: 1.5rem; padding: 0 1.25rem; }
+    .navbar-menu { gap: 1rem; }
+    .nav-link { font-size: 0.85rem; }
+}
+
+/* HP / tablet kecil: menu jadi hamburger */
+@media (max-width: 900px) {
+    .navbar-container { min-height: 68px; }
+
+    .navbar-brand span { font-size: 0.8rem; }
+
+    .navbar-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--navy-900);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .navbar-menu.open { max-height: 480px; }
+
+    .nav-link {
+        padding: 0.9rem 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+    }
+
+    .navbar-login { display: none; }
+
+    .navbar-toggle { display: flex; }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background: var(--navy-900);
+    color: rgba(255, 255, 255, 0.85);
+    padding: 3.5rem 1.5rem 0;
+}
+
+.footer-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1.2fr 1fr;
+    gap: 2rem;
+    padding-bottom: 2.5rem;
+}
+
+.footer-col h3 { color: var(--white); font-size: 1rem; margin-bottom: 0.75rem; }
+.footer-col h4 { color: var(--white); font-size: 0.95rem; margin-bottom: 0.9rem; }
+.footer-col p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.7); }
+.footer-col ul li { margin-bottom: 0.6rem; font-size: 0.85rem; }
+.footer-col ul li a:hover { color: var(--white); }
+.footer-contact li { color: rgba(255, 255, 255, 0.7); }
+
+.footer-map iframe {
+    width: 100%;
+    height: 110px;
+    border: 0;
+    border-radius: 6px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 1.25rem 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 800px) {
+    .footer-container { grid-template-columns: 1fr 1fr; }
+}
+
+/* Sembunyikan sisa elemen efek lama yang masih dibuat oleh JS */
+.cursor-glow,
+.page-transition {
+    display: none !important;
+}
